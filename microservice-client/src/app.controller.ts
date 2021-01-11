@@ -12,8 +12,13 @@ export class AppController {
   }
 
   @Get()
-  getHello() {
+  async getHello() {
     this.client.emit<any>('message_printed', new Message('Hello World!!!'));
-    return 'Hello World printed';
+
+    const r = await this.client.send<any, number[]>('sum', [2, 2, 2]).toPromise<number>();
+
+    // tslint:disable-next-line:no-console
+    console.log('sum', r);
+    return 'sum = ' + r;
   }
 }

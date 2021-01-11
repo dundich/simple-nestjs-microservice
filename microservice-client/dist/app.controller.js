@@ -21,16 +21,18 @@ let AppController = class AppController {
     }
     async onApplicationBootstrap() {
     }
-    getHello() {
+    async getHello() {
         this.client.emit('message_printed', new message_event_1.Message('Hello World!!!'));
-        return 'Hello World printed';
+        const r = await this.client.send('sum', [2, 2, 2]).toPromise();
+        console.log('sum', r);
+        return 'sum = ' + r;
     }
 };
 __decorate([
     common_1.Get(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], AppController.prototype, "getHello", null);
 AppController = __decorate([
     common_1.Controller(),

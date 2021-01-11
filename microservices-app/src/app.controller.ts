@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { EventPattern } from '@nestjs/microservices';
+import { EventPattern, MessagePattern } from '@nestjs/microservices';
 
 @Controller()
 export class AppController {
@@ -9,5 +9,12 @@ export class AppController {
   async handleMessagePrinted(data: Record<string, unknown>) {
     // tslint:disable-next-line:no-console
     console.log(data.text);
+  }
+
+  @MessagePattern('sum')
+  async accumulate(data: number[]): Promise<number> {
+    // tslint:disable-next-line:no-console
+    console.log('accumulate', data);
+    return (data || []).reduce((a, b) => a + b);
   }
 }

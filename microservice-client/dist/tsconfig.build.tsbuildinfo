@@ -1522,8 +1522,8 @@
         "signature": "6116d2707bcd938164a363414adbd9f73445f825c60d3f003f304d31004e0565"
       },
       "../src/app.controller.ts": {
-        "version": "7ba7b8d4fbce24a4591126269ec9a37e1ef715285216f62e0a1005318437a22b",
-        "signature": "20e9fff6b6cf546ddf090ae5768de82c0436165740a001962ccbd1bf29c5f74c"
+        "version": "434a88eebe4984f930c1dcf91b929b0e0ba32e7de0909b44d64d16b3136f8532",
+        "signature": "084f124bd4ac2063ae429c7457ee865ec6323c013ed7fc5d72f2e357f957ec93"
       },
       "../src/app.module.ts": {
         "version": "a0081c4da829087356b9d95ebca0682bc75648937b9fe5db14d4166afb0ce1c0",
@@ -8798,7 +8798,7 @@
       "../node_modules/@nestjs/microservices/tokens.d.ts",
       "../node_modules/@nestjs/microservices/index.d.ts",
       "../src/message.event.ts",
-      "../src/app.controller.ts",
+      "../src/app.module.ts",
       "../src/main.ts",
       "../node_modules/@types/anymatch/index.d.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
@@ -8836,7 +8836,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/app.module.ts"
+      "../src/app.controller.ts"
     ]
   },
   "version": "3.7.4"

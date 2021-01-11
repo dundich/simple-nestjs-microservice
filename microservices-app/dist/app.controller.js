@@ -16,6 +16,10 @@ let AppController = class AppController {
     async handleMessagePrinted(data) {
         console.log(data.text);
     }
+    async accumulate(data) {
+        console.log('accumulate', data);
+        return (data || []).reduce((a, b) => a + b);
+    }
 };
 __decorate([
     microservices_1.EventPattern('message_printed'),
@@ -23,6 +27,12 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "handleMessagePrinted", null);
+__decorate([
+    microservices_1.MessagePattern('sum'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Array]),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "accumulate", null);
 AppController = __decorate([
     common_1.Controller(),
     __metadata("design:paramtypes", [])
