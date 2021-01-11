@@ -20,10 +20,9 @@ let AppController = class AppController {
         this.client = client;
     }
     async onApplicationBootstrap() {
-        await this.client.connect();
     }
     getHello() {
-        this.client.emit('message_printed', new message_event_1.Message('Hello World'));
+        this.client.emit('message_printed', new message_event_1.Message('Hello World!!!'));
         return 'Hello World printed';
     }
 };

@@ -8,12 +8,12 @@ export class AppController {
   constructor(@Inject('HELLO_SERVICE') private readonly client: ClientProxy) { }
 
   async onApplicationBootstrap() {
-    await this.client.connect();
+    // await this.client.connect();
   }
 
   @Get()
   getHello() {
-    this.client.emit<any>('message_printed', new Message('Hello World'));
+    this.client.emit<any>('message_printed', new Message('Hello World!!!'));
     return 'Hello World printed';
   }
 }

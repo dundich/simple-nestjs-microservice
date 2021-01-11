@@ -16,7 +16,13 @@ AppModule = __decorate([
     common_1.Module({
         imports: [
             microservices_1.ClientsModule.register([
-                { name: 'HELLO_SERVICE', transport: microservices_1.Transport.TCP },
+                {
+                    name: 'HELLO_SERVICE',
+                    transport: microservices_1.Transport.TCP,
+                    options: {
+                        port: 3004,
+                    },
+                },
             ]),
         ],
         controllers: [app_controller_1.AppController],
