@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const microservices_1 = require("@nestjs/microservices");
 const message_event_1 = require("./message.event");
+const operators_1 = require("rxjs/operators");
 let AppController = class AppController {
     constructor(client) {
         this.client = client;
@@ -23,9 +24,10 @@ let AppController = class AppController {
     }
     async getHello() {
         this.client.emit('message_printed', new message_event_1.Message('Hello World!!!'));
-        const r = await this.client.send('sum', [2, 2, 2]).toPromise();
-        console.log('sum', r);
-        return 'sum = ' + r;
+        const r = await this.client.send('sum', [2, 2, 2]);
+        return this.client
+            .send('sum', [2, 2, 2])
+            .pipe(operators_1.map(c => 'sum = ' + c));
     }
 };
 __decorate([
